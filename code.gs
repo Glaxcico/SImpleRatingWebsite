@@ -1,5 +1,5 @@
 function doPost(e) {
-  const sheet = SpreadsheetApp.openById('[SheedIDhere]').getSheetByName('rating');
+  const sheet = SpreadsheetApp.openById('[SheetIDhere]').getSheetByName('rating');
 
   const letter = e.parameter.letter;
   const bracelet = e.parameter.bracelet;
