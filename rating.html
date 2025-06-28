@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gift Rating</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 flex items-center justify-center min-h-screen p-4 sm:p-6">
+
+  <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg w-full max-w-md text-center space-y-6">
+    <h1 class="text-2xl sm:text-3xl font-bold text-pink-600">🎁 Rate Your Gifts 🎁</h1>
+
+    <form action="https://script.google.com/macros/s/AKfycbwJwX8Ocq3j5_fZxsdiTOroZDWNk8vNpJrfZK5A9mk6nMxvmVsWfG2a716WJhNKpVr8zQ/exec" method="POST" id="ratingForm" class="space-y-5 text-left">
+      <input type="hidden" name="letter" id="letter" />
+      <input type="hidden" name="bracelet" id="bracelet" />
+      <input type="hidden" name="memoryjar" id="memoryjar" />
+
+      <div>
+        <label for="letterSlider" class="block font-semibold mb-1 text-pink-700">💌 Letter</label>
+        <input type="range" min="1" max="5" value="3" id="letterSlider" class="w-full accent-pink-500" />
+      </div>
+
+      <div>
+        <label for="braceletSlider" class="block font-semibold mb-1 text-pink-700">🎀 Bracelet</label>
+        <input type="range" min="1" max="5" value="3" id="braceletSlider" class="w-full accent-pink-500" />
+      </div>
+
+      <div>
+        <label for="memorySlider" class="block font-semibold mb-1 text-pink-700">🫙 Memory Jar</label>
+        <input type="range" min="1" max="5" value="3" id="memorySlider" class="w-full accent-pink-500" />
+      </div>
+
+      <button type="submit" class="w-full mt-4 bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-full transition">
+        Submit 💘
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("ratingForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      document.getElementById("letter").value = document.getElementById("letterSlider").value;
+      document.getElementById("bracelet").value = document.getElementById("braceletSlider").value;
+      document.getElementById("memoryjar").value = document.getElementById("memorySlider").value;
+
+      form.submit();
+    });
+  </script>
+</body>
+</html>
